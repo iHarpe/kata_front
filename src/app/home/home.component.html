@@ -1,0 +1,19 @@
+<table  class="tftable" >
+        <tr><th>ID Evento</th>
+            <th>Nombre del evento</th>
+            <th>Descripcion del evento</th>
+            <th>Fecha del evento</th>
+            <th>Numero maximo de asistentes</th>
+            <th>Total de asistentes</th>
+            </tr>
+            <ng-container *ngFor="let e of eventos">
+                <tr>
+                    <th>{{e.idevent}}</th>
+                    <th>{{e.nombre}}</th>
+                    <th>{{e.descripcion}}</th>
+                    <th>{{e.fechaevento}}</th>
+                    <th>{{e.asistentesmax}}</th>
+                    <th>{{e.asistentestot}}</th>
+                </tr>
+                </ng-container>
+                <table>

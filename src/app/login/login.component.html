@@ -1,0 +1,44 @@
+<div class="container">
+<form [formGroup]="loguinForm">
+    <h2>Login</h2>
+    <div>
+
+        <div>
+            <span class="p-float-label">
+                <input id="float-input" formControlName="userid" type="text" required="required" pInputText >
+                <label for="float-input">Username</label>
+            </span>
+            <div class="alert alert-danger" *ngIf="userid!.invalid && (userid!.dirty || userid!.touched)">
+                <div class="container-error-message" *ngIf="userid!.errors?.['required']">
+                    Este campo es requerido
+                </div>
+                <div class="container-error-message" *ngIf="userid!.errors?.['email']">
+                    Correo invalido
+                </div>
+            </div>
+        </div>
+        <div>
+            <span class="p-float-label">
+                <input type="password" id="password" formControlName="password" required="required" />
+                <label for="password">Password</label>
+            </span>
+            <div class="alert alert-danger" *ngIf="password!.invalid && (password!.dirty || password!.touched)">
+                <div class="container-error-message" *ngIf="password!.errors?.['required']">
+                    Este campo es requerido
+                </div>
+                <div class="container-error-message" *ngIf="password!.errors?.['minlength']">
+                    Por lo menos 8 carcteres.
+                </div>
+            </div>
+        </div>
+        <div id="sendArea">
+            
+            <button type="button" label="Ingresar" (click)="login()">Ingresar</button>
+
+            <button type="button" label="Registrarse" (click)="signIn()">Registrarse</button>
+
+        </div>
+
+    </div>
+</form>
+</div>
